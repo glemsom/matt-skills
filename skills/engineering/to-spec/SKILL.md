@@ -16,7 +16,7 @@ The issue tracker and triage label vocabulary should have been provided to you â
 
 Check with the user that these seams match their expectations.
 
-3. Write the spec using the template below, then publish it to the project issue tracker. Apply the `specification` triage label - no need for additional triage.
+3. Write the spec using the template below, then publish it to the project issue tracker. Apply only the `specification` label.
 
 <spec-template>
 
