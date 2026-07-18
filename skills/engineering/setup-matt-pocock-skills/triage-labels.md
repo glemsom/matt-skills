@@ -1,6 +1,6 @@
 # Triage Labels
 
-The skills speak in terms of five canonical triage roles, plus one additional state label. This file maps them to the actual label strings used in this repo's issue tracker.
+The skills speak in terms of five canonical triage roles plus two issue-type labels. This file maps them to the actual label strings used in this repo's issue tracker.
 
 | Label in mattpocock/skills | Label in our tracker | Meaning                                  |
 | -------------------------- | -------------------- | ---------------------------------------- |
@@ -9,7 +9,8 @@ The skills speak in terms of five canonical triage roles, plus one additional st
 | `ready-for-agent`          | `ready-for-agent`    | Fully specified, ready for an AFK agent  |
 | `ready-for-human`          | `ready-for-human`    | Requires human implementation            |
 | `wontfix`                  | `wontfix`            | Will not be actioned                     |
-| `specification`            | `specification`      | Spec written, needs breaking into sub-tickets |
+| `issue-type: parent`       | `issue-type: parent` | Specification that must be decomposed into child issues |
+| `issue-type: work-item`    | `issue-type: work-item` | Actionable unit — agent or human implements code from it |
 
 When a skill mentions a role (e.g. "apply the AFK-ready triage label"), use the corresponding label string from this table.
 

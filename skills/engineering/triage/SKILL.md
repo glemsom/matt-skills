@@ -28,22 +28,24 @@ Two **category** roles:
 - `bug` — something is broken
 - `enhancement` — new feature or improvement
 
-Six **state** roles:
+Five **state** roles:
 
 - `needs-triage` — maintainer needs to evaluate
 - `needs-info` — waiting on reporter for more information
-- `specification` — spec written, needs breaking into sub-tickets
 - `ready-for-agent` — fully specified, ready for an AFK agent
 - `ready-for-human` — needs human implementation
 - `wontfix` — will not be actioned
+Every issue also carries an **issue type** — `work-item` (agent implements code from it) or `parent` (specification that must be decomposed into child issues by `to-tickets`). The type is orthogonal to state: a `parent` can be `needs-triage`, `ready-for-agent`, etc.
 
 For a PR, the same states read against the attached code: `ready-for-agent` means a brief is attached and an agent should take the next step on the diff; `ready-for-human` means it's ready for a human to merge.
 
 Every triaged issue should carry exactly one category role and one state role. If state roles conflict, flag it and ask the maintainer before doing anything else.
 
-These are canonical role names — the actual label strings used in the issue tracker may differ. The mapping should have been provided to you - run `/setup-matt-pocock-skills` if not.
+These are canonical role names — the actual label strings used in the issue tracker may differ. The mapping should have been provided to you — run `/setup-matt-pocock-skills` if not.
 
-State transitions: an unlabeled issue normally goes to `needs-triage` first; from there it moves to `needs-info`, `specification`, `ready-for-agent`, `ready-for-human`, or `wontfix`. `needs-info` returns to `needs-triage` once the reporter replies. The maintainer can override at any time — flag transitions that look unusual and ask before proceeding.
+State transitions for both issue types: an unlabeled issue normally goes to `needs-triage` first; from there it moves to `needs-info`, `ready-for-agent`, `ready-for-human`, or `wontfix`. `needs-info` returns to `needs-triage` once the reporter replies. The maintainer can override at any time — flag transitions that look unusual and ask before proceeding.
+
+Note: `specification` is no longer a state label. It has been replaced by the orthogonal **issue type** dimension — use `issue-type: parent` on the spec issue, then set a state appropriate to its pipeline position (e.g. `needs-triage` for a fresh spec, `ready-for-agent` for one ready to be decomposed by `to-tickets`).
 
 ## Invocation
 
